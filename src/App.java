@@ -19,8 +19,9 @@ public class App{
         List<Map<Integer,Double>> list = s.findAllDistancesFromEachWellToEachHouse(d);
         System.out.println(list);
         System.out.println("////////");
-        System.out.println("Cheapest Distance: " + s.getSumOfDistances(list));
+        System.out.println("Cheapest Distance: " + s.getSumOfDistances(list, d));
         Log log = new Log("text.txt");
         log.log("Salam");
+        s.printResult();
     }
 }

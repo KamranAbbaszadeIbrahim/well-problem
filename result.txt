@@ -1,0 +1,1 @@
+Sum of cheapest distances is: 37.32806569266674 
