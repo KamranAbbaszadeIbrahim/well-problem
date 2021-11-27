@@ -1,18 +1,21 @@
 package model;
 
-import java.util.UUID;
-
 public class House {
-    private String id;
     private Point point;
+    private Integer connection;
+    private boolean isFlagged;
 
     public House(Point point){
         this.point = point;
-        id = UUID.randomUUID().toString();
+        connection = Integer.MIN_VALUE;
     }
 
-    public String getId() {
-        return id;
+    public Integer getConnection() {
+        return connection;
+    }
+
+    public void setConnection(Integer connection) {
+        this.connection = connection;
     }
 
     public Point getPoint() {
@@ -22,5 +25,13 @@ public class House {
     @Override
     public String toString() {
         return point.toString();
+    }
+
+    public boolean isFlagged() {
+        return isFlagged;
+    }
+
+    public void setFlagged(boolean flagged) {
+        isFlagged = flagged;
     }
 }

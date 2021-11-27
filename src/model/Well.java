@@ -2,42 +2,34 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class Well {
-    private String id;
-    private Integer connectionAmount;
     private Point point;
-    private List<House> houseList;
+    private List<Integer> connectionList;
+    private boolean isFlagged;
 
     public Well(Point point){
         this.point = point;
-        id = UUID.randomUUID().toString();
-        houseList = new ArrayList<>();
-        connectionAmount = 0;
-    }
-
-    public void setHouseToList(House house) {
-        houseList.add(house);
-    }
-
-    public String getId() {
-        return id;
+        connectionList = new ArrayList<>();
     }
 
     public Point getPoint() {
         return point;
     }
 
-    public void setConnectionAmount(Integer connectionAmount) {
-        this.connectionAmount = connectionAmount;
+    public boolean isFlagged() {
+        return isFlagged;
     }
 
-    public List<House> getHouseList() {
-        return houseList;
+    public void setFlagged(boolean flagged) {
+        isFlagged = flagged;
     }
 
-    public Integer getConnectionAmount() {
-        return connectionAmount;
+    public void setConnection(Integer connection){
+        connectionList.add(connection);
+    }
+
+    public List<Integer> getConnectionList(){
+        return connectionList;
     }
 }
