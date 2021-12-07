@@ -168,7 +168,7 @@ public class HungarianAlgorithm {
     private void assign() {
         System.out.println("Breakpoint 6 COPY");
         List<Integer> clone = new ArrayList<>(Collections.nCopies(houseQuantity, -1));
-        List<Integer> limit = new ArrayList<>(Collections.nCopies(wellQuantity, -1));
+        List<Integer> limit = new ArrayList<>(Collections.nCopies(wellQuantity, 0));
 
         detectAll(0, 0, clone, limit);
 
@@ -202,7 +202,9 @@ public class HungarianAlgorithm {
                     if (temDistance == 0 && tempWellConnection.get(currentWell) < normalizedDataset.getK()) {
                         found = true;
                         tempRes.set(pos, currentWell);
+                        System.out.println(tempRes.get(pos));
                         tempWellConnection.set(currentWell, tempWellConnection.get(currentWell) + 1);
+                        System.out.println(tempWellConnection.get(currentWell));
                         detectAll(pos + 1, assigned + 1, tempRes, tempWellConnection);
                     }
 
