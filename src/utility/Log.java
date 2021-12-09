@@ -1,8 +1,6 @@
 package utility;
 
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDateTime;
 
 public class Log {
@@ -16,7 +14,7 @@ public class Log {
 
     public void log(String string){
         try {
-            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path));
+            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path, true));
             stream.write((LocalDateTime.now() + " :\t" + string).getBytes());
             stream.write(separator);
             stream.close();

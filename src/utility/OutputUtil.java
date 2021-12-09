@@ -1,5 +1,8 @@
 package utility;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 public abstract class OutputUtil {
@@ -25,4 +28,15 @@ public abstract class OutputUtil {
     }
 
     public abstract void out(String path, List<Object> list);
+
+    public static void output(String string){
+        try {
+            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream("result.txt", false));
+            stream.write(string.getBytes());
+            stream.write(System.lineSeparator().getBytes());
+            stream.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 }

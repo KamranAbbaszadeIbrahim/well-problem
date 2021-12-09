@@ -11,13 +11,13 @@ public class NormalizedDataset {
 
     @Override
     public String toString() {
-        return "NormalizedDataset{\n\t" +
+        return "NormalizedDataset{" +
                 "n=" + n +
-                ", \n\tk=" + k +
-                ", \n\th=" + h +
-                ", \n\tsetOfN=" + setOfN +
-                ", \n\tsetOfH=" + setOfH +
-                "\n}";
+                ",k=" + k +
+                ", h=" + h +
+                ", setOfN=" + setOfN +
+                ", setOfH=" + setOfH +
+                "}";
     }
 
     public Integer getN() {
